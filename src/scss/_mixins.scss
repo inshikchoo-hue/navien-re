@@ -1,0 +1,20 @@
+@mixin font($type) {
+    $item: map-get($font-set, $type);
+
+    font-family: $font-family-default;
+    font-weight: map-get($font-weight, map-get($item, weight));
+    line-height: map-get($item, line-height);
+
+    @media (min-width: 1441px) {
+        font-size: map-get($item, desktop);
+    }
+    @media (max-width: 1440px) and (min-width: 992px) {
+        font-size: map-get($it5em, laptop);
+    }
+    @media (max-width: 991px) and (min-width: 768px) {
+        font-size: map-get($item, tablet);
+    }
+    @media (max-width: 767px) {
+        font-size: map-get($item, mobile);
+    }
+}
