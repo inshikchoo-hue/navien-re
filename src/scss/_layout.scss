@@ -1,0 +1,28 @@
+// gnb
+.gnb {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 55px 100px;
+    z-index: 100;
+}
+
+.menu-list {
+    display: flex;
+    gap: 100px;
+}
+
+.menu a {
+    color: #fff;
+    font-size: 1.25rem;
+}
+
+.link-menu-list {
+    display: flex;
+    gap: 20px;
+}

@@ -1,0 +1,7 @@
+@use 'font';
+@use 'variables'; //모든 변수(컬러, 폰트, spacing, breakpoint)
+@use 'common';
+@use 'reset';
+@use 'layout'; //헤더나 푸터
+@use 'mixins'; //반응형, 폰트세팅, utility
+@use 'components'; //버튼, 카드같은 요소
