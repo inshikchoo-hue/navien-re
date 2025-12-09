@@ -1,179 +1,161 @@
 // 컬러 변수 정의 
 $color-primary: #233671;
 $color-secondary: #E5702B;
-$subColor-blue1: #5E86D0;
-$subColor-blue2: #7187CC;
-$subColor-blue3: #C3CEE2;
-$color-black1: #1c1c1c;
-$color-black2: #222222;
+$sub-blue1: #5E86D0;
+$sub-blue2: #7187CC;
+$sub-blue3: #C3CEE2;
+$black-1: #1c1c1c;
+$black-2: #222222;
+$black-3: #3d3d3d;
 $color-white: #fff;
-$grayColor-gray1: #656565;
-$grayColor-gray2: #a1a1a1;
-$grayColor-gray3: #B3B3B3;
-$grayColor-gray4: #E5E5E5;
-$GrayColor-gray5: #EDEDED;
+$gray-1: #656565;
+$gray-2: #a1a1a1;
+$gray-3: #B3B3B3;
+$gray-4: #E5E5E5;
+$gray-5: #EDEDED;
 
 // 폰트 변수 정의
 $font-family-default: "Pretendard", sans-serif;
 $font-weight: (
-    light: 300,
-    regular: 400,
-    medium: 500,
-    semibold: 600,
-    bold: 700
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
 );
 $line-height: (
-    tight: 1.1,
-    normal: 1.2,
-    relaxed: 1.5
+  tight: 1.1,
+  normal: 1.2,
+  relaxed: 1.5
 );
 
 $font-set: (
-  H1: (
-    weight: semibold,
+  H1: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 70px,
     laptop: 62px,
     tablet: 48px,
-    mobile: 38px
-  ),
-  H2: (
-    weight: semibold,
+    mobile: 38px),
+  H2: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 64px,
     laptop: 52px,
     tablet: 44px,
-    mobile: 32px
-  ),
-  H3: (
-    weight: semibold,
+    mobile: 32px),
+  H3: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 34px,
     laptop: 32px,
     tablet: 30px,
-    mobile: 28px
-  ),
-  H4: (
-    weight: semibold,
+    mobile: 28px),
+  H4: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 30px,
     laptop: 27px,
     tablet: 25px,
-    mobile: 20px
-  ),
-  H5: (
-    weight: semibold,
+    mobile: 20px),
+  H5: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 26px,
     laptop: 23px,
     tablet: 20px,
-    mobile: 18px
-  ),
-  H6: (
-    weight: semibold,
+    mobile: 18px),
+  H6: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 20px,
     laptop: 18px,
     tablet: 16px,
-    mobile: 15px
-  ),
+    mobile: 15px),
 
-  SubTitle1: (
-    weight: light,
+  SubTitle1: (weight: light,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 44px,
     laptop: 36px,
     tablet: 26px,
-    mobile: 19px
-  ),
-  SubTitle2: (
-    weight: light,
+    mobile: 19px),
+  SubTitle2: (weight: light,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 32px,
     laptop: 28px,
     tablet: 22px,
-    mobile: 17px
-  ),
-  SubTitle3: (
-    weight: light,
+    mobile: 17px),
+  SubTitle3: (weight: light,
     line-height: 1.2,
+    letter-spacing:-2px,
     desktop: 28px,
     laptop: 24px,
     tablet: 20px,
-    mobile: 16px
-  ),
-  SubTitle4: (
-    weight: light,
+    mobile: 16px),
+  SubTitle4: (weight: light,
     line-height: 1.2,
+    letter-spacing:-1px,
     desktop: 24px,
     laptop: 20px,
     tablet: 15px,
-    mobile: 12px
-  ),
+    mobile: 12px),
 
-  Body1: (
-    weight: regular,
+  Body1: (weight: regular,
     line-height: 1.5,
+    letter-spacing:-2px,
     desktop: 20px,
     laptop: 19px,
     tablet: 18px,
-    mobile: 16px
-  ),
-  Body2: (
-    weight: regular,
+    mobile: 16px),
+  Body2: (weight: regular,
     line-height: 1.5,
     desktop: 17px,
     laptop: 16px,
     tablet: 15px,
-    mobile: 14px
-  ),
-  Body3: (
-    weight: regular,
+    mobile: 14px),
+  Body3: (weight: regular,
     line-height: 1.5,
+    letter-spacing:-2px,
     desktop: 15px,
     laptop: 15px,
     tablet: 14px,
-    mobile: 14px
-  ),
-  Body4: (
-    weight: regular,
+    mobile: 14px),
+  Body4: (weight: regular,
     line-height: 1.5,
+    letter-spacing:-2px,
     desktop: 14px,
     laptop: 14px,
     tablet: 13px,
-    mobile: 14px
-  ),
-  Body5: (
-    weight: regular,
+    mobile: 14px),
+  Body5: (weight: regular,
     line-height: 1.5,
+    letter-spacing:-2px,
     desktop: 13px,
     laptop: 13px,
     tablet: 12px,
-    mobile: 14px
-  ),
+    mobile: 14px),
 
-  Button1: (
-    weight: semibold,
+  Button1: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-1px,
     desktop: 26px,
     laptop: 24px,
     tablet: 18px,
-    mobile: 14px
-  ),
-  Button2: (
-    weight: semibold,
+    mobile: 14px),
+  Button2: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-1px,
     desktop: 20px,
     laptop: 18px,
     tablet: 16px,
-    mobile: 14px
-  ),
-  Button3: (
-    weight: semibold,
+    mobile: 14px),
+  Button3: (weight: semibold,
     line-height: 1.2,
+    letter-spacing:-1px,
     desktop: 16px,
     laptop: 16px,
     tablet: 15px,
-    mobile: 14px
-  )
+    mobile: 14px)
 );

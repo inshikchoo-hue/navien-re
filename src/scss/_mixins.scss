@@ -1,19 +1,25 @@
-@mixin font($type) {
-    $item: map-get($font-set, $type);
+@use 'variables';
 
-    font-family: $font-family-default;
-    font-weight: map-get($font-weight, map-get($item, weight));
+@mixin font($type) {
+    $item: map-get(variables.$font-set, $type);
+
+    font-family: variables.$font-family-default;
+    font-weight: map-get(variables.$font-weight, map-get($item, weight));
     line-height: map-get($item, line-height);
+    letter-spacing: map-get($item, letter-spacing);
 
     @media (min-width: 1441px) {
         font-size: map-get($item, desktop);
     }
+
     @media (max-width: 1440px) and (min-width: 992px) {
-        font-size: map-get($it5em, laptop);
+        font-size: map-get($item, laptop);
     }
+
     @media (max-width: 991px) and (min-width: 768px) {
         font-size: map-get($item, tablet);
     }
+
     @media (max-width: 767px) {
         font-size: map-get($item, mobile);
     }

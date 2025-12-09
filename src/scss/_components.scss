@@ -3,34 +3,63 @@
 
 //메인타이틀
 .main-title {
-    position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: 0;
+    transform: translateY(-50%);
     width: 100%;
     text-align: start;
+}
+
+.mt-lighten {
+    color: variables.$color-white;
+    position: relative;
 }
 
 .main-title h2 {
     @include mixins.font(SubTitle1);
 }
 
-// .main-title h2 {
-//     // @include font(SubTitle1)
-//     // font-size: 55px;
-//     // font-weight: 300;
-//     // letter-spacing: -1px;
-//     // margin-bottom: 10px;
-// }
+.main-title h2 span {
+    @include mixins.font(H1);
+}
 
-// .main-title h2 span {
-//     // font-size: 70px;
-//     // font-weight: 700;
-// }
+.main-title p {
+    @include mixins.font(SubTitle4);
+    margin-bottom: 30px;
+}
 
-// .main-title p {
-//     // font-size: 30px;
-//     // font-weight: 300;
-//     // padding-bottom: 20px;
-//     // letter-spacing: -1px;
-// }
+//버튼
+.mt-btn {
+    @include mixins.font(Button2);
+    display: inline-block;
+    padding: 18px 45px;
+    border: 1px solid;
+    border-radius: 10px;
+}
+
+.btn-lighten {
+    position: relative;
+    color: variables.$color-white;
+    border-color: variables.$color-white;
+}
+
+//swiper-pagenation
+.swiper-pagination {
+    position: absolute;
+    // top: 100px;
+    left: 0;
+    // bottom: 230px;
+    // text-align: left;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+    opacity: 1;
+    background: variables.$color-white;
+}
+
+.swiper-pagination-bullet-active {
+    background: variables.$color-secondary;
+}
