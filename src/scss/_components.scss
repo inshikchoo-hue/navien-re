@@ -1,3 +1,6 @@
+@use 'mixins';
+@use 'variables';
+
 //메인타이틀
 .main-title {
     position: absolute;
@@ -6,6 +9,10 @@
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: start;
+}
+
+.main-title h2 {
+    @include mixins.font(SubTitle1);
 }
 
 // .main-title h2 {
