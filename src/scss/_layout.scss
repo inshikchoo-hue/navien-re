@@ -9,7 +9,6 @@
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
     padding: 55px 100px;
     z-index: 100;
 }
@@ -30,7 +29,11 @@
 }
 
 //hero-sec
-.swiper-slide {
+.mySwiper {
+    position: relative;
+}
+
+.swiper-wrapper {
     width: 100%;
     height: 100vh;
 }

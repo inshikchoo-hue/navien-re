@@ -1,18 +1,17 @@
 @use 'mixins';
 @use 'variables';
 
-//메인타이틀
+// 메인타이틀
 .main-title {
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    text-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
 }
 
 .mt-lighten {
     color: variables.$color-white;
-    position: relative;
 }
 
 .main-title h2 {
@@ -35,10 +34,17 @@
     padding: 18px 45px;
     border: 1px solid;
     border-radius: 10px;
+    position: relative;
+}
+
+.swiper-pagination {
+    position: absolute;
+    left: 0;
+    top: calc(100% + 16px);
+    width: auto;
 }
 
 .btn-lighten {
-    position: relative;
     color: variables.$color-white;
     border-color: variables.$color-white;
 }
@@ -46,11 +52,10 @@
 //swiper-pagenation
 .swiper-pagination {
     position: absolute;
-    // top: 100px;
     left: 0;
-    // bottom: 230px;
-    // text-align: left;
-    z-index: 10;
+    transform: translateX(0);
+    bottom: 500px; /* 필요시 조정 */
+    width: auto;
 }
 
 .swiper-pagination-bullet {
