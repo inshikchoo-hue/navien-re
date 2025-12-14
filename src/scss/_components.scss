@@ -1,5 +1,6 @@
 @use 'mixins';
-@use 'variables';
+@use 'variables' as va;
+
 
 // 메인타이틀
 .main-title {
@@ -11,7 +12,7 @@
 }
 
 .mt-lighten {
-    color: variables.$color-white;
+    color: va.$white;
 }
 
 .main-title h2 {
@@ -45,8 +46,8 @@
 }
 
 .btn-lighten {
-    color: variables.$color-white;
-    border-color: variables.$color-white;
+    color: va.$white;
+    border-color: va.$white;
 }
 
 //swiper-pagenation
@@ -54,17 +55,18 @@
     position: absolute;
     left: 0;
     transform: translateX(0);
-    bottom: 500px; /* 필요시 조정 */
+    bottom: 50rem;
+    /* 필요시 조정 */
     width: auto;
 }
 
 .swiper-pagination-bullet {
-    width: 16px;
-    height: 16px;
+    width: 1.6rem;
+    height: 1.6rem;
     opacity: 1;
-    background: variables.$color-white;
+    background: va.$white;
 }
 
 .swiper-pagination-bullet-active {
-    background: variables.$color-secondary;
+    background: va.$secondary;
 }

@@ -1,4 +1,11 @@
-@use 'variables' as *;
+@use 'variables' as va;
+@use 'mixins';
+
+.container {
+    width: 100%;
+    padding: 0 23.8rem;
+    height: 100%;
+}
 
 // gnb
 .gnb {
@@ -9,23 +16,26 @@
     position: absolute;
     top: 0;
     left: 0;
-    padding: 55px 100px;
+    padding: 5.5rem 10rem;
     z-index: 100;
 }
 
-.menu-list {
+.menu__list {
+    width: 50%;
     display: flex;
-    gap: 100px;
+    gap: 10rem;
 }
 
 .menu a {
-    font-size: 1.25rem;
-    color: $color-white;
+    width: 100%;
+    @include mixins.font(Body1);
+    color: va.$white;
 }
 
-.link-menu-list {
+.menu__list--link {
+    width: 5rem;
     display: flex;
-    gap: 20px;
+    gap: 2rem;
 }
 
 //hero-sec

@@ -1,9 +1,23 @@
- body {
-     font-family: "pretendard", sans-serif;
- }
+//1rem 기준을 10px로 설정
+html {
+    font-size: 62.5%;
+}
 
- .container {
-     width: 100%;
-     padding: 0 238px;
-     height: 100%;
- }
+body {
+    font-family: "pretendard", sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.5;
+}
+
+//Utility class
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-fit {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
