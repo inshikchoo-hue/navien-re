@@ -1,0 +1,16 @@
+{
+  // 커서 위 문서 미리보기(호버) 켬
+  "editor.hover.enabled": true,
+  // 입력 중 파라미터 힌트 팝업 끔
+  "editor.parameterHints.enabled": false,
+  // 입력 중 유령 텍스트(인라인 제안) 끔
+  "editor.inlineSuggest.enabled": false,
+  // 자동 제안 트리거 문자(.) 등에서 자동 제안 켬
+  "editor.suggestOnTriggerCharacters": true,
+  // 입력 중 자동 제안 켬
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  }
+}

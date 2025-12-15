@@ -15,17 +15,24 @@
     color: va.$white;
 }
 
-.main-title h2 {
-    @include mixins.font(SubTitle1);
+.mt-darken {
+    color: va.$black-1;
 }
 
-.main-title h2 span {
+.main-title h3 {
+    @include mixins.font(SubTitle1);
+    margin-bottom: 0;
+
+}
+
+.main-title h2 {
     @include mixins.font(H1);
+    margin-bottom: 1.4rem;
 }
 
 .main-title p {
     @include mixins.font(SubTitle4);
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
 }
 
 //버튼
@@ -38,12 +45,6 @@
     position: relative;
 }
 
-.swiper-pagination {
-    position: absolute;
-    left: 0;
-    top: calc(100% + 16px);
-    width: auto;
-}
 
 .btn-lighten {
     color: va.$white;
@@ -51,15 +52,6 @@
 }
 
 //swiper-pagenation
-.swiper-pagination {
-    position: absolute;
-    left: 0;
-    transform: translateX(0);
-    bottom: 50rem;
-    /* 필요시 조정 */
-    width: auto;
-}
-
 .swiper-pagination-bullet {
     width: 1.6rem;
     height: 1.6rem;
@@ -69,4 +61,15 @@
 
 .swiper-pagination-bullet-active {
     background: va.$secondary;
+}
+
+// 페이지네이션을 메인타이틀 하단으로 위치시키기
+.main-title > .swiper-pagination {
+    position: static;
+    left: auto;
+    top: auto;
+    bottom: auto;
+    transform: none;
+    width: auto;
+    margin-top: 2.2rem;
 }

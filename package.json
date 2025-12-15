@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "sass:build": "sass src/scss/main.scss asset/css/main.css --style=expanded",
     "sass:prod": "sass src/scss/main.scss asset/css/main.css --style=compressed",
-    "sass:watch": "sass --watch src/scss:css"
+    "sass:watch": "sass --watch src/scss:asset/css"
   },
   "keywords": [],
   "author": "",
