@@ -14,16 +14,17 @@ var heroSwiper = new Swiper(".mySwiper", {
     }
 });
 
+// Hero swiper-pagination
 function placeHeroPagination(swiper) {
     try {
         var paginationEl = swiper && swiper.pagination && swiper.pagination.el;
         var activeSlide = swiper && swiper.slides && swiper.slides[swiper.activeIndex];
         if (!paginationEl || !activeSlide) return;
 
-        var mainTitle = activeSlide.querySelector('.main-title');
+        var mainTitle = activeSlide.querySelector('.main__title');
         if (!mainTitle) return;
 
-        var btn = mainTitle.querySelector('a.mt-btn');
+        var btn = mainTitle.querySelector('a.main__title-btn');
         if (btn && btn.parentNode) {
             btn.insertAdjacentElement('afterend', paginationEl);
         } else {
@@ -43,8 +44,8 @@ var productSwiper = new Swiper(".mySwiper2", {
         clickable: true,
     },
     navigation: {
-        nextEl: ".prod__btn--next",
-        prevEl: ".prod__btn--prev",
+        nextEl: ".prod__btn-next",
+        prevEl: ".prod__btn-prev",
     },
     breakpoints: {
         640: {

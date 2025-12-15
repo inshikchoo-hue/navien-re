@@ -3,7 +3,7 @@
 
 
 // 메인타이틀
-.main-title {
+.main__title {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -11,32 +11,32 @@
     position: relative;
 }
 
-.mt-lighten {
+.main__title--lighten {
     color: va.$white;
 }
 
-.mt-darken {
+.main__title--darken {
     color: va.$black-1;
 }
 
-.main-title h3 {
+.main__title h3 {
     @include mixins.font(SubTitle1);
     margin-bottom: 0;
 
 }
 
-.main-title h2 {
+.main__title h2 {
     @include mixins.font(H1);
     margin-bottom: 1.4rem;
 }
 
-.main-title p {
+.main__title p {
     @include mixins.font(SubTitle4);
     margin-bottom: 3rem;
 }
 
 //버튼
-.mt-btn {
+.main__title-btn {
     @include mixins.font(Button2);
     display: inline-block;
     padding: 18px 45px;
@@ -46,7 +46,7 @@
 }
 
 
-.btn-lighten {
+.button-lighten {
     color: va.$white;
     border-color: va.$white;
 }
@@ -64,7 +64,7 @@
 }
 
 // 페이지네이션을 메인타이틀 하단으로 위치시키기
-.main-title > .swiper-pagination {
+.main__title>.swiper-pagination {
     position: static;
     left: auto;
     top: auto;
