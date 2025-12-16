@@ -1,18 +1,33 @@
 // Hero Swiper
 var heroSwiper = new Swiper(".mySwiper", {
     pagination: {
-        el: ".swiper-pagination",
+        el: ".hero-pagination",
         clickable: true,
     },
     on: {
         init: function () {
             placeHeroPagination(this);
+            updateProductImage(this);
         },
         slideChange: function () {
             placeHeroPagination(this);
+            updateProductImage(this);
         }
     }
 });
+
+// Hero product image slide
+function updateProductImage(swiper) {
+    var activeSlide = swiper && swiper.slides && swiper.slides[swiper.activeIndex];
+    if (!activeSlide) return;
+
+    var productSrc = activeSlide.getAttribute('data-product');
+    var productImg = document.querySelector('.hero__product-img img');
+    
+    if (productSrc && productImg) {
+        productImg.src = productSrc;
+    }
+}
 
 // Hero swiper-pagination
 function placeHeroPagination(swiper) {

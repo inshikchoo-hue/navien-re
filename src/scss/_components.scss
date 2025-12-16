@@ -51,7 +51,7 @@
     border-color: va.$white;
 }
 
-//swiper-pagenation
+//hero-pagenation
 .swiper-pagination-bullet {
     width: 1.6rem;
     height: 1.6rem;
@@ -72,4 +72,19 @@
     transform: none;
     width: auto;
     margin-top: 2.2rem;
+}
+
+// prod__pagination
+.prod__pagination {
+    position: static;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.prod__pagination .swiper-pagination-bullet {
+    background-color: #e0e0e0;
+}
+
+.prod__pagination .swiper-pagination-bullet-active {
+    background: va.$secondary;
 }
