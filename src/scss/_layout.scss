@@ -1,11 +1,6 @@
 @use 'variables' as va;
 @use 'mixins' as mix;
 
-.container {
-    width: 100%;
-    height: 100%;
-    padding: 0 23.8rem;
-}
 
 // gnb
 .gnb {
@@ -82,18 +77,29 @@
     }
 }
 
-
 // productList-sec
+.productList__sec {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
 .sideNav {
-    display: flex;
-    justify-content: end;
+    position: absolute;
+    top: 7rem;
+    right: 0;
     text-align: right;
-    // margin-right: 10rem;
 
     &-list {
         display: flex;
         flex-direction: column;
         gap: 0.2rem;
+
+        &--active a {
+            color: va.$white;
+            background-color: va.$sub-gold;
+            padding: 2rem 12rem 2rem 6rem;
+        }
     }
 
     &-list a {
@@ -101,18 +107,28 @@
         @include mix.font(Button1);
         color: va.$gray-2;
         padding: 2rem 10rem 2rem 6rem;
-        background-color: aquamarine;
+        background-color: va.$white;
+        border-top-left-radius: 5rem;
+        border-bottom-left-radius: 5rem;
+        // transition: all 0.3s ease;
+
+        // &:hover {
+        //     color: va.$white;
+        //     background-color: va.$sub-gold;
+        //     padding: 2rem 12rem 2rem 6rem;
+        // }
+
     }
+
 }
 
 .productList__wrap {
     width: 100%;
-    height: 100vh;
-    padding-top: 10rem;
-    // background-color: beige;
+    height: 100%;
+    padding-top: 8rem;
 
     .main__title {
-        margin-bottom: 7rem;
+        margin-bottom: 4rem;
 
         p {
             color: va.$black-3;
@@ -129,134 +145,150 @@
     display: flex;
 }
 
-.prod {
-    &__btn {
-        display: flex;
-        justify-content: end;
-        gap: 0.7rem;
-        margin-bottom: 1rem;
-    }
+//subscription
+.subscription__sec {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../../asset/images/back_01.png');
+}
 
-    &__btn-prev {
-        width: 4.4rem;
-        height: 4.4rem;
-        border: 1px solid #D9D9D9;
-        border-radius: 50%;
-        background-image: url('../../asset/images/prev-none.png');
-        background-size: auto;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background-image: url('../../asset/images/prev-hover.png');
-            border-color: va.$secondary;
-        }
-
-    }
-
-    &__btn-next {
-        width: 4.4rem;
-        height: 4.4rem;
-        border: 1px solid #D9D9D9;
-        border-radius: 50%;
-        background-image: url('../../asset/images/next-none.png');
-        background-size: auto;
-        transition: all 0.3s ease;
-
-        &:hover {
-            background-image: url('../../asset/images/next-hover.png');
-            border-color: va.$secondary;
-        }
-
-    }
-
-    &__card {
+.subs {
+    &__contents {
         width: 100%;
-        // height: 100%;
-        height: 35rem;
-        border: 1px solid #DFDFDF;
-        border-radius: 3rem;
-        text-align: center;
-        padding: 2.3rem 3rem;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        h2 {
+            @include mix.font(H1);
+        }
+
+        p {
+            @include mix.font(SubTitle4);
+            width: 30rem;
+        }
+    }
+}
+
+
+//touch service
+.touchServ {
+    &__sec {
+        width: 100%;
+        height: 100vh;
+        background-color: va.$gray-4;
+    }
+
+    &__contents {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    &__title {
+        text-align: center;
+        margin-bottom: 6rem;
+
+        h2 {
+            @include mix.font(H1);
+            color: va.$black-1;
+        }
+
+        p {
+            @include mix.font(SubTitle3);
+            color: va.$black-2;
+        }
     }
 
-    &__cardIcon {
-        width: 100%;
-        height: 58%;
+    &__card-wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2rem;
+    }
+}
+
+//footer
+.footer {
+    width: 100%;
+    height: 34rem;
+    background-color: va.$primary;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &__head {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 2rem;
 
-        &-center {
-            width: 70%;
-            background-size: contain;
-
-            &-img01 {
-                background-image: url('../../asset/images/list-Boiler-01.png');
-            }
+        h1 {
+            opacity: 50%;
         }
 
-        &-left {
-            width: auto;
-            height: 100%;
-        }
-
-        &-right {
-            width: auto;
+        &-button {
             display: flex;
-            flex-direction: column;
-            gap: 0.6rem;
+            align-items: center;
+            gap: 4rem;
+        }
 
-            img {
-                width: 3.4rem;
-            }
+        &-snsIcon {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        &-fam {
+            width: 26rem;
+            height: 4.6rem;
+            border: 0.2rem solid va.$sub-blue2;
+            border-radius: 5rem;
+            padding: 0 2rem;
+            background-color: transparent;
+            color: va.$sub-blue2;
+            @include mix.font(Button2);
         }
     }
 
-    &__cardDesc {
-        height: 38%;
+    &__content {
+        p {
+            @include mix.font(SubTitle2);
+            color: va.$sub-blue2;
+            margin-bottom: 1rem;
 
-        h3 {
-            @include mix.font(H6);
-            color: va.$black-3;
-            text-align: start;
-            margin-bottom: 0.4rem;
+            span {
+                @include mix.font(H4);
+            }
+        }
+
+        &-text {
+            display: flex;
+            gap: 4rem;
+
+            p {
+                @include mix.font(Body1);
+                color: va.$sub-blue2;
+            }
         }
 
         ul {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-        }
+            gap: 1rem;
 
-        li:nth-child(odd) {
-            @include mix.font(Body5);
-            color: va.$gray-2;
-        }
-
-        li:nth-child(even) {
-            font-size: 1rem;
-            color: #E0E0E0;
-        }
-
-        &-price {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 0.8rem;
-            @include mix.font(H4);
-            color: va.$black-3;
-
-            span {
-                @include mix.font(Body3);
+            li:nth-child(odd) a {
+                @include mix.font(Button3);
+                color: va.$sub-blue2;
             }
 
-            p:first-child {
-                @include mix.font(Body4);
+            li:nth-child(even) {
+                font-size: 1.2rem;
+                color: #3D5294;
+
             }
         }
     }
-
-
 }

@@ -23,7 +23,7 @@ function updateProductImage(swiper) {
 
     var productSrc = activeSlide.getAttribute('data-product');
     var productImg = document.querySelector('.hero__product-img img');
-    
+
     if (productSrc && productImg) {
         productImg.src = productSrc;
     }
@@ -75,5 +75,19 @@ var productSwiper = new Swiper(".mySwiper2", {
             slidesPerView: 4,
             spaceBetween: 22,
         },
+    },
+});
+
+//scrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+let contents = gsap.utils.toArray('.sec02 .content');
+gsap.to(contents, {
+    xPercent: -100 * (contents.length - 1),
+    ease: 'none',
+    scrollTrigger: {
+        trigger: '.sec02',
+        pin: true,
+        scrub: 2
     },
 });
