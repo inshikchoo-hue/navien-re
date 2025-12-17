@@ -65,6 +65,17 @@
     &-slide03 {
         height: 90vh;
         background-image: url('../../asset/images/kv03.jpg');
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.3);
+        }
     }
 
     &__product-img {
@@ -93,39 +104,32 @@
     &-list {
         display: flex;
         flex-direction: column;
-        gap: 0.2rem;
+        gap: 3.4rem;
+
+        a {
+            @include mix.font(Button1);
+            color: va.$gray-2;
+        }
+
+        li:not(.sideNav-list--active) {
+            margin-right: 10rem;
+        }
 
         &--active a {
-            color: va.$white;
             background-color: va.$sub-gold;
             padding: 2rem 12rem 2rem 6rem;
+            border-top-left-radius: 5rem;
+            border-bottom-left-radius: 5rem;
+            color: va.$white;
         }
     }
-
-    &-list a {
-        display: block;
-        @include mix.font(Button1);
-        color: va.$gray-2;
-        padding: 2rem 10rem 2rem 6rem;
-        background-color: va.$white;
-        border-top-left-radius: 5rem;
-        border-bottom-left-radius: 5rem;
-        // transition: all 0.3s ease;
-
-        // &:hover {
-        //     color: va.$white;
-        //     background-color: va.$sub-gold;
-        //     padding: 2rem 12rem 2rem 6rem;
-        // }
-
-    }
-
 }
 
 .productList__wrap {
     width: 100%;
     height: 100%;
     padding-top: 8rem;
+    // display: flex;
 
     .main__title {
         margin-bottom: 4rem;
@@ -188,7 +192,7 @@
         justify-content: center;
         align-items: center;
     }
-    
+
     &__title {
         text-align: center;
         margin-bottom: 6rem;

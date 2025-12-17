@@ -50,6 +50,14 @@ function placeHeroPagination(swiper) {
     }
 }
 
+// Product sideNav tab
+$(function () {
+    $(".sideNav-list li").on("click", function () {
+        $(".sideNav-list li").removeClass("sideNav-list--active");
+        $(this).addClass("sideNav-list--active");
+    });
+});
+
 // Product Swiper
 var productSwiper = new Swiper(".mySwiper2", {
     slidesPerView: 1,
