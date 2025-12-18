@@ -93,43 +93,15 @@
     width: 100%;
     height: 100vh;
     position: relative;
-}
-
-.sideNav {
-    position: absolute;
-    top: 7rem;
-    right: 0;
-    text-align: right;
-
-    &-list {
-        display: flex;
-        flex-direction: column;
-        gap: 3.4rem;
-
-        a {
-            @include mix.font(Button1);
-            color: va.$gray-2;
-        }
-
-        li:not(.sideNav-list--active) {
-            margin-right: 10rem;
-        }
-
-        &--active a {
-            background-color: va.$sub-gold;
-            padding: 2rem 12rem 2rem 6rem;
-            border-top-left-radius: 5rem;
-            border-bottom-left-radius: 5rem;
-            color: va.$white;
-        }
-    }
+    display: flex;
+    overflow: hidden;
+    flex-wrap: nowrap;
 }
 
 .productList__wrap {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     padding-top: 8rem;
-    // display: flex;
 
     .main__title {
         margin-bottom: 4rem;
@@ -245,15 +217,94 @@
             gap: 2rem;
         }
 
-        &-fam {
-            width: 26rem;
+    }
+
+    .custom-dropdown {
+        position: relative;
+        width: 18rem;
+
+        &__trigger {
+            width: 100%;
             height: 4.6rem;
             border: 0.2rem solid va.$sub-blue2;
             border-radius: 5rem;
-            padding: 0 2rem;
+            padding: 0 4rem 0 2.5rem;
             background-color: transparent;
             color: va.$sub-blue2;
             @include mix.font(Button2);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                content: '';
+                position: absolute;
+                right: 2rem;
+                top: 50%;
+                transform: translateY(-50%);
+                width: 1.2rem;
+                height: 0.8rem;
+                background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%237187CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+                background-repeat: no-repeat;
+                background-position: center;
+                transition: transform 0.3s ease;
+            }
+
+            &:focus {
+                outline: none;
+                border-color: va.$sub-blue2;
+            }
+        }
+
+        &.open &__trigger::after {
+            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 7L6 2L1 7' stroke='%237187CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+        }
+
+        &__menu {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            left: 0;
+            width: 100%;
+            background-color: va.$white;
+            border-radius: 1rem;
+            padding: 1rem 0;
+            list-style: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-1rem);
+            transition: all 0.3s ease;
+            z-index: 100;
+            max-height: 30rem;
+            overflow-y: auto;
+            box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
+
+            li {
+                a {
+                    display: block;
+                    padding: 1rem 2rem;
+                    color: va.$primary;
+                    @include mix.font(Button2);
+                    text-decoration: none;
+                    transition: all 0.2s ease;
+
+                    &:hover {
+                        background-color: rgba(113, 135, 204, 0.1);
+                    }
+
+                    &.selected {
+                        color: va.$sub-blue2;
+                        font-weight: 600;
+                    }
+                }
+            }
+        }
+
+        &.open &__menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
     }
 
