@@ -78,6 +78,7 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="./asset/css/main.css">
 </head>
 
@@ -89,7 +90,7 @@
             </h1>
             <ul class="gnb__menu-list gnb__menu-list--lighten">
                 <li class="menu">
-                    <a href="#">제품</a>
+                    <a href="list.html">제품</a>
                 </li>
                 <li class="menu">
                     <a href="#">구독</a>
@@ -119,7 +120,7 @@
     </header>
     <main>
         <section class="hero__sec">
-            <div class="matching__board">
+            <div class="matching__board" data-aos="fade-left">
                 <h3>나에게 맞는 제품 추천받기</h3>
                 <div class="matching__prod-wrap">
                     <div class="matching__prod matching__prod01 matching__prod-enabled">
@@ -275,15 +276,15 @@
                         <form class="matching__checkbox-wrap">
                             <label class="matching__checkbox">
                                 <input type="checkbox">
-                                <span class="matching__checkbox-text">WARM&COOL+</span>
+                                <span class="matching__checkbox-text">WARM & COOL+</span>
                             </label>
                             <label class="matching__checkbox">
                                 <input type="checkbox">
-                                <span class="matching__checkbox-text">펠티어쿨링</span>
+                                <span class="matching__checkbox-text">펠티어 쿨링</span>
                             </label>
                             <label class="matching__checkbox">
                                 <input type="checkbox">
-                                <span class="matching__checkbox-text">알러지케어</span>
+                                <span class="matching__checkbox-text">알러지 케어</span>
                             </label>
                             <label class="matching__checkbox">
                                 <input type="checkbox">
@@ -291,18 +292,18 @@
                             </label>
                             <label class="matching__checkbox">
                                 <input type="checkbox">
-                                <span class="matching__checkbox-text">슬림매트</span>
+                                <span class="matching__checkbox-text">슬림 매트</span>
                             </label>
                             <label class="matching__checkbox">
                                 <input type="checkbox">
-                                <span class="matching__checkbox-text">커버일체형</span>
+                                <span class="matching__checkbox-text">커버 일체형</span>
                             </label>
                         </form>
                     </div>
 
                 </div>
                 <div class="matching__button">
-                    <a href="#">추천 결과 보기</a>
+                    <a href="list.html">추천 결과 보기</a>
                 </div>
             </div>
             <!-- swiper -->
@@ -310,7 +311,7 @@
                 <div class="swiper-wrapper">
                     <div class="swiper-slide hero-slide01 background-fit"
                         data-product="./asset/images/kv-product-01.png">
-                        <div class="main__title main__title--lighten container">
+                        <div class="main__title main__title--lighten container" data-aos="fade-up">
                             <h3>새로운 온수가전의 시작</h3>
                             <h2>나비엔 콘덴싱 ON AI</h2>
                             <p>알아서 가동하는 스마트 동파방지 시스템</p>
@@ -355,7 +356,7 @@
                 </ul>
             </div>
             <div class="productList__wrap productList__01 container" id="productList__01">
-                <div class="main__title main__title--darken">
+                <div class="main__title main__title--darken" data-aos="fade-up">
                     <h3>대한민국 국가대표 보일러</h3>
                     <h2>나비엔 콘덴싱 보일러</h2>
                     <p>난방비를 줄이는 똑똑한 노하우</p>
@@ -1317,7 +1318,7 @@
         <!-- section-03 -->
         <section class="subscription__sec background-fit">
             <div class="subs__contents container">
-                <div class="subs__title">
+                <div class="subs__title" data-aos="fade-up">
                     <h2>나비엔 구독</h2>
                     <p>나비엔 제품구독과 서비스 구독을 경험해 보세요.</p>
                 </div>
@@ -1348,7 +1349,7 @@
         <!-- section-04 -->
         <section class="touchServ__sec">
             <div class="touchServ__contents container">
-                <div class="touchServ__title">
+                <div class="touchServ__title" data-aos="fade-up">
                     <h2>나비엔 TOUCH 서비스</h2>
                     <p>365일 24시간 고객의 마음까지 행복하게 언제나 처음부터 끝까지 책임집니다.</p>
                 </div>
@@ -1521,6 +1522,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollToPlugin.min.js"></script>
     <script src="./asset/js/jquery-3.7.1.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./asset/js/script.js"></script>
 </body>
 

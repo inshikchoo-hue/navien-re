@@ -1,5 +1,11 @@
 //<------------------Main-page------------------------->
 
+// AOS 초기화
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
 // Hero Swiper
 var heroSwiper = new Swiper(".mySwiper", {
   pagination: {

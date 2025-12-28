@@ -1199,17 +1199,17 @@ a {
 }
 @media (min-width: 1441px) {
   .matching__dropdown-list li a {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 1440px) {
   .matching__dropdown-list li a {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 }
 @media (max-width: 1024px) {
   .matching__dropdown-list li a {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 480px) {
