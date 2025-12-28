@@ -13,15 +13,106 @@
         font-size: map.get($item, desktop);
     }
 
-    @media (max-width: 1440px) and (min-width: 992px) {
+    @media (max-width: 1440px) {
         font-size: map.get($item, laptop);
     }
 
-    @media (max-width: 991px) and (min-width: 768px) {
+    @media (max-width: 1024px) {
         font-size: map.get($item, tablet);
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 480px) {
         font-size: map.get($item, mobile);
+    }
+}
+
+@mixin container-padding {
+    @media (min-width: 1441px) {
+        padding-inline: clamp(12rem, 10vw, 23.8rem);
+    }
+
+    @media (max-width: 1440px) {
+        padding-inline: 11.8rem;
+    }
+
+    @media (max-width: 1024px) {
+        padding-inline: clamp(5.5rem, 10vw, 10rem);
+    }
+
+    @media (max-width: 480px) {
+        padding-inline: clamp(2.4rem, 10vw, 3.6rem);
+    }
+
+}
+
+@mixin headFoot-container-padding {
+    @media (min-width: 1441px) {
+        padding: 4rem 10rem;
+    }
+
+    @media (max-width: 1440px) {
+        padding: 4rem 5.8rem;
+    }
+
+    @media (max-width: 1024px) {
+        padding: 3rem 5rem;
+    }
+
+    @media (max-width: 768px) {
+        padding: 2rem 4.6rem;
+    }
+
+    @media (max-width: 480px) {
+        padding: 1rem 2.2rem;
+    }
+}
+
+@mixin logo-img {
+    display: block;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: 1441px) {
+        width: 18rem;
+        height: 5rem;
+    }
+
+    @media (max-width: 1440px) {
+        width: 15rem;
+        height: 4.2rem;
+    }
+
+    @media (max-width: 1024px) {
+        width: 12rem;
+        height: 3.4rem;
+    }
+
+    @media (max-width: 480px) {
+        width: 10rem;
+        height: 2.8rem;
+    }
+}
+
+
+@mixin main-btn {
+    @media (min-width:1441px) {
+        padding: 18px 45px;
+        border-radius: 10px;
+    }
+
+    @media (max-width:1440px) {
+        padding: 16px 40px;
+        border-radius: 7px;
+    }
+
+    @media (max-width:1024px) {
+        padding: 10px 20px;
+        border-radius: 4px;
+    }
+
+    @media (max-width:480px) {
+        padding: 10px 26px;
+        border-radius: 4px;
     }
 }

@@ -5,5 +5,5 @@
 @use 'layout'; //헤더나 푸터
 @use 'mixins'; //반응형, 폰트세팅, utility
 @use 'components'; //버튼, 카드같은 요소
-
-// @use './index';
+@use 'page/list';
+@use 'page/view';

@@ -83,13 +83,11 @@
 
 <body>
     <header>
-        <nav class="gnb" id="top">
-            <h1 class="gnb__logo">
-                <a href="#">
-                    <img src="./asset/images/logo_navien-lighten.png" alt="나비엔로고">
-                </a>
+        <nav class="gnb headFoot-container" id="top">
+            <h1 class="gnb__logo gnb__logo--lighten">
+                <a href="#"></a>
             </h1>
-            <ul class="gnb__menu-list">
+            <ul class="gnb__menu-list gnb__menu-list--lighten">
                 <li class="menu">
                     <a href="#">제품</a>
                 </li>
@@ -107,20 +105,14 @@
                 </li>
             </ul>
             <ul class="gnb__linkMenu-list">
-                <li class="linkMenu">
-                    <a href="#">
-                        <img src="./asset/images/icon-login-lighten.png" alt="로그인">
-                    </a>
+                <li class="gnb__linkMenu-item gnb__linkMenu-item--lighten01">
+                    <a href="#"></a>
                 </li>
-                <li class="linkMenu">
-                    <a href="#">
-                        <img src="./asset/images/icon-search-lighten.png" alt="검색">
-                    </a>
+                <li class="gnb__linkMenu-item gnb__linkMenu-item--lighten02">
+                    <a href="#"></a>
                 </li>
-                <li class="linkMenu">
-                    <a href="#">
-                        <img src="./asset/images/icon-hamburger-lighten.png" alt="사이트맵">
-                    </a>
+                <li class="gnb__linkMenu-item gnb__linkMenu-item--lighten03 mobile">
+                    <a href="#"></a>
                 </li>
             </ul>
         </nav>
@@ -132,65 +124,185 @@
                 <div class="matching__prod-wrap">
                     <div class="matching__prod matching__prod01 matching__prod-enabled">
                         <a href=""><img src="./asset/images/checkbox1-on.png" alt="체크"></a>
-                        <div class="matching__prod-img">
+                        <div class="matching__prod-item">
                             <img src="./asset/images/matching_prod-01.png" alt="보일러">
+                            <h4>보일러</h4>
                         </div>
-                        <h4>보일러</h4>
                     </div>
                     <div class="matching__prod matching__prod02 matching__prod-disabled">
                         <a href=""><img src="./asset/images/checkbox1-none.png" alt="체크"></a>
-                        <div class="matching__prod-img">
+                        <div class="matching__prod-item">
                             <img src="./asset/images/matching_prod-02.png" alt="환기청정기">
+                            <h4>공기청정기</h4>
                         </div>
-                        <h4>공기청정기</h4>
                     </div>
                     <div class="matching__prod matching__prod03 matching__prod-disabled">
                         <a href=""><img src="./asset/images/checkbox1-none.png" alt="체크"></a>
-                        <div class="matching__prod-img">
+                        <div class="matching__prod-item">
                             <img src="./asset/images/matching_prod-03.png" alt="숙면매트">
+                            <h4>숙면매트</h4>
                         </div>
-                        <h4>숙면매트</h4>
                     </div>
                 </div>
-                <div class="matching__form">
-                    <div class="matching-dropdown">
-                        <button type="button" class="matching-dropdown__trigger">
-                            <span>사용연료</span>
-                        </button>
-                        <ul class="matching-dropdown__menu">
-                            <li><a href="#" data-value="사용연료">사용연료</a></li>
-                            <li><a href="#" data-value="가스연료">가스연료</a></li>
-                            <li><a href="#" data-value="기름연료">기름연료</a></li>
-                        </ul>
+                <div class="matching__form-wrap">
+                    <div class="matching__form matching__form--boiler">
+                        <div class="matching__dropdown-wrap">
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>사용 연료</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="가스연료">가스연료</a></li>
+                                    <li><a href="#" data-value="기름연료">기름연료</a></li>
+                                </ul>
+                            </div>
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>화장실 수</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="2개 미만">2개 미만</a></li>
+                                    <li><a href="#" data-value="3개 이상">3개 이상</a></li>
+                                </ul>
+                            </div>
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>가구원 수</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="3인 미만">3인 미만</a></li>
+                                    <li><a href="#" data-value="4인 이상">4인 이상</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form class="matching__checkbox-wrap">
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">내구성 강한</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">절약형</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">온수가 많이 나오는</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">동파 방지</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">스마트 AI</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">맞춤 온수</span>
+                            </label>
+                        </form>
                     </div>
-                    <div class="matching-dropdown">
-                        <button type="button" class="matching-dropdown__trigger">
-                            <span>화장실개수</span>
-                        </button>
-                        <ul class="matching-dropdown__menu">
-                            <li><a href="#" data-value="화장실개수">화장실개수</a></li>
-                            <li><a href="#" data-value="2개 미만">2개 미만</a></li>
-                            <li><a href="#" data-value="3개 이상">3개 이상</a></li>
-                        </ul>
+                    <div class="matching__form matching__form--airClean">
+                        <div class="matching__dropdown-wrap">
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>사용 환경</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="가정용">가정용</a></li>
+                                    <li><a href="#" data-value="상업시설용">상업시설용</a></li>
+                                </ul>
+                            </div>
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>평형</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="36평형">36평형</a></li>
+                                    <li><a href="#" data-value="48평형">48평형</a></li>
+                                </ul>
+                            </div>
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>맞춤 필터</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="매연강화">매연강화</a></li>
+                                    <li><a href="#" data-value="유해가스">유해가스</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form class="matching__checkbox-wrap">
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">듀얼제습</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">자동운전</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">환경맞춤필터</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">살균효과</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">청정필터</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">후드연동</span>
+                            </label>
+                        </form>
                     </div>
-                    <div class="matching-dropdown">
-                        <button type="button" class="matching-dropdown__trigger">
-                            <span>가구원수</span>
-                        </button>
-                        <ul class="matching-dropdown__menu">
-                            <li><a href="#" data-value="가구원수">가구원수</a></li>
-                            <li><a href="#" data-value="3인 미만">3인 미만</a></li>
-                            <li><a href="#" data-value="4인 이상">4인 이상</a></li>
-                        </ul>
+                    <div class="matching__form matching__form--mat">
+                        <div class="matching__dropdown-wrap">
+                            <div class="matching__dropdown">
+                                <button type="button" class="matching__dropdown-trigger">
+                                    <span>사이즈</span>
+                                </button>
+                                <ul class="matching__dropdown-list">
+                                    <li><a href="#" data-value="킹사이즈">King</a></li>
+                                    <li><a href="#" data-value="퀸사이즈">Queen</a></li>
+                                    <li><a href="#" data-value="싱글사이즈">Single</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <form class="matching__checkbox-wrap">
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">WARM&COOL+</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">펠티어쿨링</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">알러지케어</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">Wi-Fi</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">슬림매트</span>
+                            </label>
+                            <label class="matching__checkbox">
+                                <input type="checkbox">
+                                <span class="matching__checkbox-text">커버일체형</span>
+                            </label>
+                        </form>
                     </div>
-                    <form>
-                        <input type="checkbox">내구성강한
-                        <input type="checkbox">절약형
-                        <input type="checkbox">온수가많이나오는
-                        <input type="checkbox">동파방지
-                        <input type="checkbox">스마트AI
-                        <input type="checkbox">맞춤온수
-                    </form>
+
+                </div>
+                <div class="matching__button">
+                    <a href="#">추천 결과 보기</a>
                 </div>
             </div>
             <!-- swiper -->
@@ -204,7 +316,6 @@
                             <p>알아서 가동하는 스마트 동파방지 시스템</p>
                             <a href="#" class="main__title-btn button-lighten">자세히보기</a>
                         </div>
-                        <!-- <div class="hero__bottom-box"></div> -->
                     </div>
                     <div class="swiper-slide hero-slide02 background-fit"
                         data-product="./asset/images/kv-product-02.png">
@@ -214,7 +325,6 @@
                             <p>북미시장 11년 연속 판매 1위</p>
                             <a href="#" class="main__title-btn button-lighten">자세히보기</a>
                         </div>
-                        <!-- <div class="hero__bottom-box"></div> -->
                     </div>
                     <div class="swiper-slide hero-slide03 background-fit"
                         data-product="./asset/images/kv-product-03.png">
@@ -224,7 +334,6 @@
                             <p>최적의 습도와 청정함으로 진짜 쾌적 공기를 완성하다</p>
                             <a href="#" class="main__title-btn button-lighten">자세히보기</a>
                         </div>
-                        <!-- <div class="hero__bottom-box"></div> -->
                     </div>
                 </div>
                 <div class="hero__product-img">
@@ -234,6 +343,7 @@
                 </div>
             </div>
         </section>
+        <!-- section-02 -->
         <section class="productList__sec">
             <div class="sideNav">
                 <ul class="sideNav-list">
@@ -551,8 +661,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img11 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -582,8 +690,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img12 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -615,7 +721,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img13 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -646,7 +751,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img14 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -675,8 +779,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img15 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -705,7 +807,6 @@
                                     </div>
                                     <div class="prod__cardIcon-right">
                                         <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <!-- <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -731,7 +832,7 @@
             <div class="productList__wrap productList__03 container" id="productList__03">
                 <div class="main__title main__title--darken">
                     <h3>기분 좋은 숙면의 시작</h3>
-                    <h2>나비엔 숙면매트 온수/카본</h2>
+                    <h2>나비엔 숙면매트 온수</h2>
                     <p>익숙한 내 공간에서 호텔보다 더 편안한 휴식을 완성해 보세요.</p>
                     <a href="#" class="main__title-btn">자세히보기</a>
                 </div>
@@ -767,8 +868,6 @@
                                         <li>AI솔루션</li>
                                         <li>|</li>
                                         <li>양면형커버</li>
-                                        <li>|</li>
-                                        <li>애쉬베이지</li>
                                     </ul>
                                     <div class="prod__cardDesc-price">
                                         <p>예상가격</p>
@@ -802,8 +901,6 @@
                                         <li>AI솔루션</li>
                                         <li>|</li>
                                         <li>양면형커버</li>
-                                        <li>|</li>
-                                        <li>애쉬그레이</li>
                                     </ul>
                                     <div class="prod__cardDesc-price">
                                         <p>예상가격</p>
@@ -837,8 +934,6 @@
                                         <li>AI솔루션</li>
                                         <li>|</li>
                                         <li>양면형커버</li>
-                                        <li>|</li>
-                                        <li>애쉬베이지</li>
                                     </ul>
                                     <div class="prod__cardDesc-price">
                                         <p>예상가격</p>
@@ -872,8 +967,6 @@
                                         <li>AI솔루션</li>
                                         <li>|</li>
                                         <li>양면형커버</li>
-                                        <li>|</li>
-                                        <li>애쉬그레이</li>
                                     </ul>
                                     <div class="prod__cardDesc-price">
                                         <p>예상가격</p>
@@ -907,8 +1000,6 @@
                                         <li>Wi-Fi</li>
                                         <li>|</li>
                                         <li>슬림매트</li>
-                                        <li>|</li>
-                                        <li>코튼블렌드커버</li>
                                     </ul>
                                     <div class="prod__cardDesc-price">
                                         <p>예상가격</p>
@@ -928,7 +1019,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img25 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -961,7 +1051,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img26 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -1013,7 +1102,6 @@
                                     </div>
                                     <div class="prod__cardIcon-right">
                                         <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <!-- <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -1046,7 +1134,6 @@
                                     </div>
                                     <div class="prod__cardIcon-right">
                                         <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <!-- <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -1079,7 +1166,6 @@
                                     </div>
                                     <div class="prod__cardIcon-right">
                                         <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <!-- <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -1111,7 +1197,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img34 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -1142,7 +1227,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img34 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -1174,7 +1258,6 @@
                                     </div>
                                     <div class="prod__cardIcon-right">
                                         <img src="./asset/images/badge-new.png" alt="뉴">
-                                        <!-- <img src="./asset/images/badge-best.png" alt="베스트"> -->
                                     </div>
                                 </div>
                                 <div class="row2 prod__cardDesc">
@@ -1204,7 +1287,6 @@
                                     <div class="prod__cardIcon-center prod__cardIcon-center-img36 background-fit">
                                     </div>
                                     <div class="prod__cardIcon-right">
-                                        <!-- <img src="./asset/images/badge-new.png" alt="뉴"> -->
                                         <img src="./asset/images/badge-best.png" alt="베스트">
                                     </div>
                                 </div>
@@ -1232,6 +1314,7 @@
                 </div>
             </div>
         </section>
+        <!-- section-03 -->
         <section class="subscription__sec background-fit">
             <div class="subs__contents container">
                 <div class="subs__title">
@@ -1262,6 +1345,7 @@
                 </div>
             </div>
         </section>
+        <!-- section-04 -->
         <section class="touchServ__sec">
             <div class="touchServ__contents container">
                 <div class="touchServ__title">
@@ -1372,11 +1456,11 @@
                     </li>
                 </ul>
                 <form>
-                    <div class="custom-dropdown">
-                        <button type="button" class="custom-dropdown__trigger">
+                    <div class="FamilySite-dropdown">
+                        <button type="button" class="FamilySite-dropdown__trigger">
                             <span>Family site</span>
                         </button>
-                        <ul class="custom-dropdown__menu">
+                        <ul class="FamilySite-dropdown__list">
                             <li><a href="#" data-value="Family site">Family site</a></li>
                             <li><a href="#" data-value="(주)경동원">(주)경동원</a></li>
                             <li><a href="#" data-value="(주)경동에버런">(주)경동에버런</a></li>
@@ -1393,7 +1477,10 @@
             </div>
         </div>
         <div class="footer__content">
-            <p>고객상담센터 <span>1588-1144</span> | 렌탈/케어 문의 <span>1661-9944</span></p>
+            <div class="footer__content-num">
+                <p>고객상담센터 <span>1588-1144</span> <span class="footer__content-partition">|</span></p>
+                <p>렌탈/케어 문의 <span>1661-9944</span></p>
+            </div>
             <div class="footer__content-text">
                 <p>(주)경동나비엔 경기도 평택시 서탄면 수월암길 95 1층</p>
                 <p>© KyungDong Navien. All Rights Reserved.</p>
@@ -1408,6 +1495,20 @@
                 <li><a href="#">법적고지</a></li>
                 <li>|</li>
                 <li><a href="#">사이트맵</a></li>
+            </ul>
+            <ul class="footer__content-snsIcon">
+                <li>
+                    <a href="#"><img src="./asset/images/icon-instar.png" alt="인스타그램">
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="./asset/images/icon-utube.png" alt="유튜브">
+                    </a>
+                </li>
+                <li>
+                    <a href="#"><img src="./asset/images/icon-blog.png" alt="블로그">
+                    </a>
+                </li>
             </ul>
         </div>
     </footer>

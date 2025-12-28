@@ -2,48 +2,21 @@
 @use 'mixins' as mix;
 
 
-// gnb
-.gnb {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 5.5rem 10rem;
-    z-index: 10;
-
-    &__menu-list {
-        width: 50%;
-        display: flex;
-        gap: 10rem;
-    }
-
-    &__linkMenu-list {
-        width: 5rem;
-        display: flex;
-        gap: 2rem;
-    }
-}
-
-.menu a {
-    width: 100%;
-    @include mix.font(Body1);
-    color: va.$white;
-}
-
-
 //hero-sec
 .hero__sec {
     width: 100%;
     height: 100vh;
     position: relative;
+
+    @media (max-width: 1024px) {
+        height: 126vh;
+    }
 }
 
 .mySwiper {
     width: 100%;
     height: 100%;
+
 }
 
 .swiper-wrapper {
@@ -78,13 +51,44 @@
         }
     }
 
+    &-slide01,
+    &-slide02,
+    &-slide03,
+    &-slide04 {
+        @media (max-width: 1024px) {
+            height: auto;
+        }
+    }
+
     &__product-img {
-        width: auto;
+        max-width: 45rem;
+        width: 100%;
+        left: clamp(36rem, 20vw, 50rem);
         height: auto;
         position: absolute;
         bottom: 0;
-        left: 42rem;
         z-index: 2;
+
+        @media (max-width: 1440px) {
+            width: 30%;
+            left: 30rem;
+        }
+
+        @media (max-width: 1024px) {
+            top: 11%;
+            left: clamp(20rem, 65vw, 66rem);
+        }
+
+        @media (max-width: 768px) {
+            width: 40%;
+            left: clamp(15rem, 55vw, 66rem);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
     }
 }
 
@@ -104,7 +108,11 @@
     padding-top: 8rem;
 
     .main__title {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
+
+        @media (max-width:768px) {
+            margin-bottom: 8rem;
+        }
 
         p {
             color: va.$black-3;
@@ -135,16 +143,29 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: start;
+        }
     }
 
     &__title {
+        margin-right: 4.5rem;
+
         h2 {
             @include mix.font(H1);
+            margin-bottom: 1rem;
         }
 
         p {
             @include mix.font(SubTitle4);
             width: 30rem;
+        }
+
+        @media (max-width: 1024px) {
+            margin-bottom: 3rem;
         }
     }
 }
@@ -154,8 +175,13 @@
 .touchServ {
     &__sec {
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
         background-color: va.$gray-4;
+        padding: 10rem 0;
+
+        @media (max-width: 1024px) {
+            padding: 6rem 0;
+        }
     }
 
     &__contents {
@@ -163,6 +189,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100%;
     }
 
     &__title {
@@ -178,19 +205,48 @@
             @include mix.font(SubTitle3);
             color: va.$black-2;
         }
+
+        @media (max-width: 1024px) {
+            margin-bottom: 5rem;
+        }
+
+        @media (max-width: 768px) {
+            margin-bottom: 4.4rem;
+        }
+
+        @media (max-width: 480px) {
+            margin-bottom: 3.2rem;
+        }
     }
 
     &__card-wrap {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 2rem;
+
+        @media (max-width: 1440px) {
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            grid-template-columns: repeat(2, 1fr);
+            width: 100%;
+        }
+
+        @media (max-width: 768px) {
+            gap: 1.8rem;
+        }
+
+        @media (max-width: 480px) {
+            gap: 1.4rem;
+        }
     }
 }
 
 //footer
 .footer {
     width: 100%;
-    height: 34rem;
     background-color: va.$primary;
     display: flex;
     flex-direction: column;
@@ -201,8 +257,8 @@
         justify-content: space-between;
         margin-bottom: 2rem;
 
-        h1 {
-            opacity: 50%;
+        h1>a>img {
+            width: clamp(80%, 10vw, 100%);
         }
 
         &-button {
@@ -215,117 +271,43 @@
             display: flex;
             align-items: center;
             gap: 2rem;
-        }
 
-    }
-
-    .custom-dropdown {
-        position: relative;
-        width: 18rem;
-
-        &__trigger {
-            width: 100%;
-            height: 4.6rem;
-            border: 0.2rem solid va.$sub-blue2;
-            border-radius: 5rem;
-            padding: 0 4rem 0 2.5rem;
-            background-color: transparent;
-            color: va.$sub-blue2;
-            @include mix.font(Button2);
-            cursor: pointer;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            position: relative;
-
-            &::after {
-                content: '';
-                position: absolute;
-                right: 2rem;
-                top: 50%;
-                transform: translateY(-50%);
-                width: 1.2rem;
-                height: 0.8rem;
-                background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%237187CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-                background-repeat: no-repeat;
-                background-position: center;
-                transition: transform 0.3s ease;
+            @media (max-width:767px) {
+                display: none;
             }
-
-            &:focus {
-                outline: none;
-                border-color: va.$sub-blue2;
-            }
-        }
-
-        &.open &__trigger::after {
-            background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 7L6 2L1 7' stroke='%237187CC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
-        }
-
-        &__menu {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            left: 0;
-            width: 100%;
-            background-color: va.$white;
-            border-radius: 1rem;
-            padding: 1rem 0;
-            list-style: none;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-1rem);
-            transition: all 0.3s ease;
-            z-index: 100;
-            max-height: 30rem;
-            overflow-y: auto;
-            box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.1);
-
-            li {
-                a {
-                    display: block;
-                    padding: 1rem 2rem;
-                    color: va.$primary;
-                    @include mix.font(Button2);
-                    text-decoration: none;
-                    transition: all 0.2s ease;
-
-                    &:hover {
-                        background-color: rgba(113, 135, 204, 0.1);
-                    }
-
-                    &.selected {
-                        color: va.$sub-blue2;
-                        font-weight: 600;
-                    }
-                }
-            }
-        }
-
-        &.open &__menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
         }
     }
 
     &__content {
+        &-num {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        &-partition {
+            margin-inline: 1rem;
+        }
+
         p {
+            flex-wrap: wrap;
             @include mix.font(SubTitle2);
             color: va.$sub-blue2;
             margin-bottom: 1rem;
 
-            span {
+            span:not(.footer__content-partition) {
                 @include mix.font(H4);
+                margin-left: 1rem;
             }
         }
 
         &-text {
             display: flex;
-            gap: 4rem;
+            flex-wrap: wrap;
 
             p {
                 @include mix.font(Body1);
                 color: va.$sub-blue2;
+                margin-right: 2rem;
             }
         }
 
@@ -333,6 +315,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            flex-wrap: wrap;
 
             li:nth-child(odd) a {
                 @include mix.font(Button3);
@@ -343,6 +326,21 @@
                 font-size: 1.2rem;
                 color: #3D5294;
 
+            }
+        }
+
+        &-snsIcon {
+            display: flex;
+            justify-content: flex-end;
+            gap: 2rem;
+            padding-top: 2rem;
+
+            >li {
+                display: none;
+
+                @media (max-width:767px) {
+                    display: block;
+                }
             }
         }
     }

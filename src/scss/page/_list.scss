@@ -1,0 +1,295 @@
+@use '../variables' as va;
+@use '../mixins' as mix;
+
+//header
+.sub__list {
+    &-visual {
+        width: 100%;
+        height: clamp(18rem, 50vw, 77.4rem);
+        background-image: linear-gradient(rgba(43, 40, 36, 0.4), rgba(43, 40, 36, 0.4)), url('../../asset/images/bg_sub-list.jpg');
+        margin-bottom: clamp(1rem, 5vw, 5rem);
+    }
+
+    &-title {
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+        color: va.$white;
+
+        h2 {
+            @include mix.font(H2);
+        }
+
+        p {
+            @include mix.font(SubTitle4);
+        }
+    }
+}
+
+//tab-button
+.sub__tab {
+    &-menuList {
+        display: flex;
+        flex-wrap: wrap;
+        @include mix.font(Button2);
+        margin-bottom: clamp(0.5rem, 2vw, 3rem);
+    }
+
+    &-menu {
+        padding-block: clamp(0.5rem, 1.5vw, 1.4rem);
+        padding-inline: clamp(2rem, 1.5vw, 3rem);
+        border-radius: 30rem;
+        color: va.$black-3;
+        background-color: va.$white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: va.$gray-4;
+        }
+
+        &--active {
+            padding-block: clamp(0.5rem, 1.5vw, 1.4rem);
+            padding-inline: clamp(2rem, 1.5vw, 3rem);
+            border-radius: 30rem;
+            background-color: va.$black-2;
+
+            a {
+                color: va.$white;
+            }
+        }
+
+    }
+
+}
+
+//product list
+.prod__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-bottom: 6rem;
+
+    @media (max-width:1280px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width:768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width:480px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    &-02 {
+        display: none;
+    }
+
+    &-03 {
+        display: none;
+    }
+
+    &-04 {
+        display: none;
+    }
+
+    &-05 {
+        display: none;
+    }
+
+    &-card-img {
+        width: 100%;
+        aspect-ratio: 5/5;
+        height: auto;
+        background-size: 80%;
+        background-color: #F5F5F5;
+        margin-bottom: 1.4rem;
+
+        &-01 {
+            background-image: url('../../asset/images/list-Boiler-01.png');
+        }
+
+        &-02 {
+            background-image: url('../../asset/images/list-Boiler-02.png');
+        }
+
+        &-03 {
+            background-image: url('../../asset/images/list-Boiler-03.png');
+        }
+
+        &-07 {
+            background-image: url('../../asset/images/list-Boiler-07.png');
+        }
+
+        &-08 {
+            background-image: url('../../asset/images/list-Boiler-08.png');
+        }
+
+        &-10 {
+            background-image: url('../../asset/images/list-Boiler-10.png');
+        }
+
+        &-11 {
+            background-image: url('../../asset/images/list-Boiler-11.png');
+        }
+
+        &-12 {
+            background-image: url('../../asset/images/list-Boiler-12.png');
+        }
+
+        &-20 {
+            background-image: url('../../asset/images/list-Boiler-20.png');
+        }
+
+        &-21 {
+            background-image: url('../../asset/images/list-Boiler-21.png');
+        }
+
+        &-22 {
+            background-image: url('../../asset/images/list-Boiler-22.png');
+        }
+
+        &-23 {
+            background-image: url('../../asset/images/list-Boiler-23.png');
+        }
+
+        &-24 {
+            background-image: url('../../asset/images/list-Boiler-24.png');
+        }
+
+        &-30 {
+            background-image: url('../../asset/images/list-Boiler-30.png');
+        }
+
+        &-31 {
+            background-image: url('../../asset/images/list-Boiler-31.png');
+        }
+
+        &-32 {
+            background-image: url('../../asset/images/list-Boiler-32.png');
+        }
+    }
+
+
+    &-icon {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &-cardDesc {
+        p {
+            @include mix.font(Body3);
+            color: va.$sub-gold;
+            margin-bottom: 0.2rem;
+        }
+
+        h3 {
+            @include mix.font(H6);
+            color: va.$black-3;
+            //줄수제한
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            overflow: hidden;
+            margin-bottom: 0.3rem;
+        }
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        li:nth-child(odd) {
+            @include mix.font(Body3);
+            color: va.$gray-2;
+        }
+
+        li:nth-child(even) {
+            font-size: 1rem;
+            color: #E0E0E0;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #E2E2E2;
+            margin-bottom: 0.8rem;
+        }
+
+        &-price {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+
+            p {
+                @include mix.font(H5);
+                color: va.$black-3;
+
+                span {
+                    @include mix.font(Body3);
+                }
+
+                &:first-child {
+                    @include mix.font(Body1);
+                    color: va.$gray-2;
+                }
+
+            }
+        }
+    }
+}
+
+.pagination {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10rem;
+
+    & a {
+        color: va.$black-3;
+    }
+
+    &__btn-list {
+        display: flex;
+        gap: 0.5rem;
+
+        li {
+            &.on {
+                background-color: va.$secondary;
+                border-radius: 0.6rem;
+
+                a {
+                    color: va.$white;
+                }
+            }
+        }
+    }
+
+    &__btn-prev {
+        width: auto;
+        height: auto;
+        display: block;
+        font-size: 1.6rem;
+        padding: 0 1.5rem;
+    }
+
+    &__btn-next {
+        display: inline-block;
+        font-size: 1.6rem;
+        padding: 0 1.5rem;
+    }
+
+    &__btn-num {
+        width: 4rem;
+        height: 4rem;
+        padding: 0.5rem 1rem;
+        font-size: 2rem;
+        font-weight: 500;
+        color: va.$black-3;
+    }
+}
