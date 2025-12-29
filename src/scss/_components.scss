@@ -213,7 +213,6 @@
         }
 
         @media (max-width: 1024px) {
-            // width: calc(100% - 20rem);
             width: calc(100% - clamp(6rem, 20vw, 20rem));
             max-width: 100%;
             top: 42%;
@@ -509,6 +508,14 @@
     right: 0;
     text-align: right;
     z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
 
     @media (max-width:1024px) {
         top: 6rem;

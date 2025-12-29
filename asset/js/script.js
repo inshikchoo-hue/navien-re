@@ -33,9 +33,15 @@ function updateProductImage(swiper) {
 
   var productSrc = $activeSlide.data('product');
   var $productImg = $('.hero__product-img img');
+  var $productContainer = $('.hero__product-img');
 
   if (productSrc && $productImg.length) {
     $productImg.attr('src', productSrc);
+
+    // animate reset
+    $productContainer.removeClass('animate__bounceIn');
+    void $productContainer[0].offsetWidth; // Force reflow
+    $productContainer.addClass('animate__bounceIn');
   }
 }
 
@@ -65,22 +71,36 @@ $(function () {
   $(".sideNav-list li a").on("click", function (e) {
     e.preventDefault();
 
-    // Update active class
-    $(".sideNav-list li").removeClass("sideNav-list--active");
-    $(this).parent().addClass("sideNav-list--active");
-
     // Get target index
     let targetId = $(this).attr("href");
     let targetIndex = $('.productList__wrap').index($(targetId));
 
-    // Calculate scroll position
-    let scrollTriggerInstance = ScrollTrigger.getAll().find(st => st.vars.trigger === '.productList__sec');
-    if (scrollTriggerInstance && targetIndex >= 0) {
+    // Find the horizontal scroll animation trigger
+    let scrollTriggerInstance = ScrollTrigger.getAll().find(st =>
+      st.vars.trigger === '.productList__sec' && st.animation
+    );
+
+    if (scrollTriggerInstance && targetIndex >= 0 && contents) {
+      // Get the section's top position
+      let sectionTop = $('.productList__sec').offset().top;
+      let windowHeight = $(window).height();
+
+      // Calculate Y position to keep section at "top center" 
+      // This matches the visibility trigger's start position
+      let targetY = sectionTop - (windowHeight / 2);
+
+      // Calculate the desired progress for horizontal animation
       let progress = targetIndex / (contents.length - 1);
-      let scrollTo = scrollTriggerInstance.start + (scrollTriggerInstance.end - scrollTriggerInstance.start) * progress;
+
+      // Calculate how much additional scroll is needed for the progress
+      let scrollRange = scrollTriggerInstance.end - scrollTriggerInstance.start;
+      let progressOffset = scrollRange * progress;
+
+      // Final scroll position: base Y + progress offset
+      let targetScroll = scrollTriggerInstance.start + progressOffset;
 
       gsap.to(window, {
-        scrollTo: scrollTo,
+        scrollTo: targetScroll,
         duration: 1,
         ease: 'power2.inOut'
       });
@@ -118,12 +138,23 @@ var productSwiper = new Swiper(".mySwiper2", {
 });
 
 // Product scrollTrigger
+let contents; // Define contents globally
+
 if (typeof gsap !== 'undefined') {
   gsap.registerPlugin(ScrollTrigger);
   gsap.registerPlugin(ScrollToPlugin);
 
-  let contents = gsap.utils.toArray('.productList__sec .productList__wrap');
+  contents = gsap.utils.toArray('.productList__sec .productList__wrap');
   let totalWidth = 100 * contents.length;
+
+  // Show/hide sideNav based on scroll position
+  $(window).on('scroll', function () {
+    if ($(window).scrollTop() > 700) {
+      $('.sideNav').addClass('show');
+    } else {
+      $('.sideNav').removeClass('show');
+    }
+  });
 
   gsap.to(contents, {
     xPercent: -100 * (contents.length - 1),
@@ -137,7 +168,7 @@ if (typeof gsap !== 'undefined') {
         duration: { min: 0.05, max: 0.2 },
         ease: 'power1.inOut'
       },
-      end: () => "+=" + (totalWidth * 5),
+      end: () => "+=" + (totalWidth * 2),
       onUpdate: (self) => {
         if (!self.isActive) return;
         let index = Math.round(self.progress * (contents.length - 1));
