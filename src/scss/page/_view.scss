@@ -198,6 +198,21 @@
     }
 }
 
+.detail__formSet {
+    &-button {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+        @include mix.font(Button2);
+
+        a {
+            padding: 1.5rem 0;
+            background-color: #F5F5F5;
+            border-radius: 3rem;
+        }
+    }
+}
+
 //플로팅 메뉴
 .detail__float-menu {
     a {
@@ -206,8 +221,8 @@
         background-color: va.$sub-blue2;
         border-radius: 50%;
         position: fixed;
-        right: 76rem;
-        bottom: 3.6em;
+        right: 3rem;
+        bottom: 3rem;
         opacity: 0;
         transform: translateY(20px);
         transition: all 0.4s ease;

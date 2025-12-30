@@ -421,13 +421,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 스크롤 시 show 클래스 추가/삭제
   window.addEventListener("scroll", () => {
-    console.log(window.scrollY);
-    if (window.scrollY > 1600) {
-      console.log("show 클래스 추가됨");
+    if (window.scrollY > 500) {
       floatMenu.classList.add("show");
     } else {
       floatMenu.classList.remove("show");
-      console.log("show 클래스 추가됨");
     }
   });
 
