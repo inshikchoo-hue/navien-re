@@ -1,4 +1,5 @@
 @use 'mixins' as mix;
+@use 'variables' as va;
 
 //1rem 기준을 10px로 설정
 html {
@@ -11,6 +12,7 @@ body {
     font-family: "pretendard", sans-serif;
     font-size: 1.6rem;
     line-height: 1.5;
+    color: va.$black-3;
 }
 
 //Utility class

@@ -7,14 +7,13 @@
     <title>경동 나비엔</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/pavicon/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/pavicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/pavicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./asset/images/favicon/favicon.ico">
+    <link rel="shortcut icon" href="./asset/images/favicon/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon/favicon.png">
 
     <meta name="google-site-verification" content="oFJVkxyUNR-J9N3vI0z3rCqrPTRTTf1ueN1qWyswjtY" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="./asset/css/main.css">
 </head>
 
@@ -75,9 +74,9 @@
                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <div class="detail__info-tabMenu">
-                    <a href="#" class="detail__info-tabMenu--active">제품 정보</a>
-                    <a href="#">제품 고시</a>
-                    <a href="#">제품 Q&A</a>
+                    <a href="" class="detail__info-tabMenu--active">제품 정보</a>
+                    <a href="">제품 고시</a>
+                    <a href="">제품 Q&A</a>
                 </div>
                 <div class="detail__info-anker" id="top">
                     <ul>
@@ -108,6 +107,16 @@
                 </div>
                 <div class="detail__info-desc">
                     <a><img src="./asset/images/detail/detail-page-30.png" alt="제품고시"></a>
+                </div>
+                <div class="detail__info-qna">
+                    <ul>
+                        <li>고객님의 개인정보 노출을 막기 위하여 개인정보는 기록하지 않도록 주의하여 주십시오.</li>
+                        <li>상품과 관련 없는 내용, 미풍양속을 해치는 글, 특정 성분의 효능을 언급하는 글, 지나치게 주관적인 글은 통보없이 삭제될 수 있습니다.</li>
+                        <li>문의하신 내용에 대한 답변은 이메일 또는 마이페이지 > 활동정보 > 상품문의에서 확인하실 수 있습니다.</li>
+                    </ul>
+                    <div class="detail__info-qna-content">
+                        <p class="detail__info-qna-empty">등록된 상품 Q&A가 없습니다.</p>
+                    </div>
                 </div>
             </div>
             <div class="detail__order-wrap">
@@ -141,7 +150,7 @@
                         <a href="">제품 구독</a>
                         <a href="">제품 구매</a>
                     </div>
-                    <div class="detail__formSet-option">
+                    <div class="detail__option">
                         <div class="detail__option-head">
                             <h4>옵션 선택</h4>
                             <a href=""><u>초기화</u></a>
@@ -152,12 +161,69 @@
                                     <span>연료</span>
                                 </button>
                                 <ul class="detail__option-dropdown-list">
-                                    <li><a href="#" data-value="엘엔지">LNG(도시가스)</a></li>
-                                    <li><a href="#" data-value="엘피지">LPG</a></li>
+                                    <li><a href="#" data-value="LNG(도시가스)">LNG(도시가스)</a></li>
+                                    <li><a href="#" data-value="LPG">LPG</a></li>
+                                </ul>
+                            </div>
+                            <div class="detail__option-dropdown--disabled">
+                                <button type="button" class="detail__option-dropdown-trigger">
+                                    <span>욕실</span>
+                                </button>
+                                <ul class="detail__option-dropdown-list">
+                                    <li><a href="#" data-value="2Se/22KQ (욕실 1~2개)">2Se/22KQ (욕실 1~2개)</a></li>
+                                    <li><a href="#" data-value="2S/27K (욕실 2개)">2S/27K (욕실 2개)</a></li>
+                                    <li><a href="#" data-value="2S+32K (욕실 2개)">2S+32K (욕실 2개)</a></li>
+                                    <li><a href="#" data-value="3S/43K (욕실 3개)">3S/43K (욕실 3개)</a></li>
+                                </ul>
+                            </div>
+                            <div class="detail__option-dropdown--disabled">
+                                <button type="button" class="detail__option-dropdown-trigger">
+                                    <span>실내온도조절기 컬러</span>
+                                </button>
+                                <ul class="detail__option-dropdown-list">
+                                    <li><a href="#" data-value="다크그레이">다크그레이</a></li>
+                                    <li><a href="#" data-value="샴페인 골드">샴페인 골드</a></li>
+                                    <li><a href="#" data-value="화이트">화이트</a></li>
+                                </ul>
+                            </div>
+                            <div class="detail__option-dropdown--disabled">
+                                <button type="button" class="detail__option-dropdown-trigger">
+                                    <span>구독기간</span>
+                                </button>
+                                <ul class="detail__option-dropdown-list">
+                                    <li><a href="#" data-value="6년">6년</a></li>
+                                    <li><a href="#" data-value="8년">8년</a></li>
                                 </ul>
                             </div>
                         </div>
+                        <div class="detail__option-meta">
+                            <div class="meta-group">
+                                <ul class="meta-category">
+                                    <li>연료</li>
+                                    <li>욕실</li>
+                                </ul>
+                                <ul class="meta-content">
+                                    <li>LNG(도시가스)</li>
+                                    <li>1.2Se/22KQ (욕실 1~2개)</li>
+                                </ul>
+                            </div>
+                            <div class="meta-group">
+                                <ul class="meta-category">
+                                    <li>실내온도조절기 컬러</li>
+                                    <li>구독기간</li>
+                                </ul>
+                                <ul class="meta-content">
+                                    <li>다크그레이</li>
+                                    <li>6년</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="detail__price">
+                            <div class="detail__price-title">월구독료</div>
+                            <div class="detail__price-num"><span>30,900</span>원</div>
+                        </div>
                     </div>
+                    <button class="detail__price-button" type="submit">상담하기</button>
                 </div>
             </div>
 
@@ -247,6 +313,7 @@
 
     <script src="./asset/js/jquery-3.7.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./asset/js/script.js"></script>
 </body>
 

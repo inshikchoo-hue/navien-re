@@ -376,6 +376,7 @@ $(function () {
 $(document).ready(function () {
   $(".detail__info-tabMenu a").on("click", function (e) {
     e.preventDefault();
+    e.stopPropagation();
 
     $(".detail__info-tabMenu a").removeClass("detail__info-tabMenu--active");
     $(this).addClass("detail__info-tabMenu--active");
@@ -384,15 +385,21 @@ $(document).ready(function () {
 
     if (index === 0) {
       $(".detail__info-images, .detail__info-anker").show();
-      $(".detail__info-desc").hide();
+      $(".detail__info-desc, .detail__info-qna").hide();
     } else if (index === 1) {
-      $(".detail__info-images, .detail__info-anker").hide();
+      $(".detail__info-images, .detail__info-anker, .detail__info-qna").hide();
       $(".detail__info-desc").show();
+    } else if (index === 2) {
+      $(".detail__info-images, .detail__info-desc, .detail__info-anker").hide();
+      $(".detail__info-qna").show();
     } else {
       $(".detail__info-images, .detail__info-anker").hide();
       $(".detail__info-desc").hide();
     }
+
+    return false;
   });
+
   // anker-button
   $(".detail__info-anker li a").on("click", function (e) {
     var href = $(this).attr("href");
@@ -417,11 +424,12 @@ $(document).ready(function () {
 // detail__float-Menu
 document.addEventListener("DOMContentLoaded", () => {
   const floatMenu = document.querySelector(".detail__float-menu");
+
   if (!floatMenu) return;
 
   // 스크롤 시 show 클래스 추가/삭제
   window.addEventListener("scroll", () => {
-    if (window.scrollY > 500) {
+    if (window.scrollY > 1200) {
       floatMenu.classList.add("show");
     } else {
       floatMenu.classList.remove("show");
@@ -438,6 +446,49 @@ document.addEventListener("DOMContentLoaded", () => {
         const targetPosition = target.offsetTop - 100;
         window.scrollTo({ top: targetPosition, behavior: "smooth" });
       }
+    });
+  }
+});
+
+//detail__order dropdown
+const detailDropdowns = document.querySelectorAll(".detail__option-dropdown");
+
+detailDropdowns.forEach(dropdown => {
+  const trigger = dropdown.querySelector(".detail__option-dropdown-trigger");
+  const options = dropdown.querySelectorAll(".detail__option-dropdown-list a");
+
+  if (trigger) {
+    // Toggle dropdown
+    trigger.addEventListener("click", (e) => {
+      e.preventDefault();
+
+      // Close other dropdowns
+      detailDropdowns.forEach(other => {
+        if (other !== dropdown) {
+          other.classList.remove("open");
+        }
+      });
+
+      dropdown.classList.toggle("open");
+    });
+
+    // Select option
+    options.forEach(option => {
+      option.addEventListener("click", (e) => {
+        e.preventDefault();
+        const value = option.getAttribute("data-value");
+        trigger.querySelector("span").textContent = value;
+
+        // Remove previous selection
+        options.forEach(opt => opt.classList.remove("selected"));
+        option.classList.add("selected");
+
+        // Add selected class to dropdown
+        dropdown.classList.add("selected");
+
+        // Close dropdown
+        dropdown.classList.remove("open");
+      });
     });
   }
 });
