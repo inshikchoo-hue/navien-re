@@ -11,8 +11,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./asset/images/favicon/favicon.png">
 
     <meta name="google-site-verification" content="oFJVkxyUNR-J9N3vI0z3rCqrPTRTTf1ueN1qWyswjtY" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+
     <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
     <link rel="stylesheet" href="./asset/css/main.css">
 </head>
@@ -48,10 +47,40 @@
                     <a href="#"></a>
                 </li>
                 <li class="gnb__linkMenu-item gnb__linkMenu-item--darken03 mobile">
-                    <a href="#"></a>
+                    <a href="#" class="mobile-menu-toggle"></a>
                 </li>
             </ul>
         </nav>
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+            <div class="mobile-menu__header">
+                <h1 class="gnb__logo gnb__logo--darken">
+                    <a href="index.html"></a>
+                </h1>
+                <button class="mobile-menu__close">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="mobile-menu__list">
+                <li class="mobile-menu__item">
+                    <a href="list.html">제품</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="#">구독</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="#">고객지원</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="#">경동소식</a>
+                </li>
+                <li class="mobile-menu__item">
+                    <a href="#">기업소개</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mobile-menu-overlay"></div>
         <hr class="header-line">
     </header>
     <main class="container">
@@ -312,7 +341,6 @@
     </div>
 
     <script src="./asset/js/jquery-3.7.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="./asset/js/view.js"></script>
 </body>

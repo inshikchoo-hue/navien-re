@@ -1,3 +1,45 @@
+// Mobile Menu
+$(document).ready(function () {
+    const mobileMenu = $('.mobile-menu');
+    const mobileMenuOverlay = $('.mobile-menu-overlay');
+    const mobileMenuToggle = $('.mobile-menu-toggle');
+    const mobileMenuClose = $('.mobile-menu__close');
+
+    // Open mobile menu
+    mobileMenuToggle.on('click', function (e) {
+        e.preventDefault();
+        // Only open menu if screen width is 1024px or less
+        if ($(window).width() <= 1024) {
+            mobileMenu.addClass('active');
+            mobileMenuOverlay.addClass('active');
+            $('body').css('overflow', 'hidden');
+        }
+    });
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.removeClass('active');
+        mobileMenuOverlay.removeClass('active');
+        $('body').css('overflow', '');
+    }
+
+    mobileMenuClose.on('click', closeMobileMenu);
+    mobileMenuOverlay.on('click', closeMobileMenu);
+
+    // Close on escape key
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu on window resize if desktop
+    $(window).on('resize', function () {
+        if ($(window).width() > 1024 && mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        }
+    });
+});
 
 // Sub-list tab menu
 $(document).ready(function () {

@@ -1,5 +1,47 @@
-
 //View page
+
+// Mobile Menu
+$(document).ready(function () {
+    const mobileMenu = $('.mobile-menu');
+    const mobileMenuOverlay = $('.mobile-menu-overlay');
+    const mobileMenuToggle = $('.mobile-menu-toggle');
+    const mobileMenuClose = $('.mobile-menu__close');
+
+    // Open mobile menu
+    mobileMenuToggle.on('click', function (e) {
+        e.preventDefault();
+        // Only open menu if screen width is 1024px or less
+        if ($(window).width() <= 1024) {
+            mobileMenu.addClass('active');
+            mobileMenuOverlay.addClass('active');
+            $('body').css('overflow', 'hidden');
+        }
+    });
+
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.removeClass('active');
+        mobileMenuOverlay.removeClass('active');
+        $('body').css('overflow', '');
+    }
+
+    mobileMenuClose.on('click', closeMobileMenu);
+    mobileMenuOverlay.on('click', closeMobileMenu);
+
+    // Close on escape key
+    $(document).on('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu on window resize if desktop
+    $(window).on('resize', function () {
+        if ($(window).width() > 1024 && mobileMenu.hasClass('active')) {
+            closeMobileMenu();
+        }
+    });
+});
 
 //tab-menu
 $(document).ready(function () {
@@ -80,16 +122,21 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 //detail__order dropdown
-const detailDropdowns = document.querySelectorAll(".detail__option-dropdown");
+const detailDropdowns = document.querySelectorAll(".detail__option-dropdown, .detail__option-dropdown--disabled");
 
-detailDropdowns.forEach(dropdown => {
+detailDropdowns.forEach((dropdown, index) => {
     const trigger = dropdown.querySelector(".detail__option-dropdown-trigger");
     const options = dropdown.querySelectorAll(".detail__option-dropdown-list a");
 
     if (trigger) {
-        // Toggle dropdown
+        // Toggle dropdown (only if not disabled)
         trigger.addEventListener("click", (e) => {
             e.preventDefault();
+
+            // Don't open if disabled
+            if (dropdown.classList.contains("detail__option-dropdown--disabled")) {
+                return;
+            }
 
             // Close other dropdowns
             detailDropdowns.forEach(other => {
@@ -105,6 +152,12 @@ detailDropdowns.forEach(dropdown => {
         options.forEach(option => {
             option.addEventListener("click", (e) => {
                 e.preventDefault();
+
+                // Don't allow selection if dropdown is disabled
+                if (dropdown.classList.contains("detail__option-dropdown--disabled")) {
+                    return;
+                }
+
                 const value = option.getAttribute("data-value");
                 trigger.querySelector("span").textContent = value;
 
@@ -117,6 +170,13 @@ detailDropdowns.forEach(dropdown => {
 
                 // Close dropdown
                 dropdown.classList.remove("open");
+
+                // Enable next dropdown (change disabled class to active class)
+                if (index < detailDropdowns.length - 1) {
+                    const nextDropdown = detailDropdowns[index + 1];
+                    nextDropdown.classList.remove("detail__option-dropdown--disabled");
+                    nextDropdown.classList.add("detail__option-dropdown");
+                }
             });
         });
     }

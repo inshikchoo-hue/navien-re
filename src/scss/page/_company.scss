@@ -1,0 +1,159 @@
+@use '../variables' as va;
+@use '../mixins' as mix;
+
+.header-line {
+    margin-bottom: 0;
+}
+
+.company__head {
+    width: 100%;
+    height: 55rem;
+}
+
+.company-part01 {
+    width: 100%;
+    height: 100rem;
+    background-image: url('../../asset/images/sub_company-part01-bg.jpg');
+
+    &__wrap {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 12rem;
+    }
+
+    &__copyright {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 12rem;
+
+        h2 {
+            color: va.$white;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            color: va.$white;
+        }
+
+        p:first-of-type {
+            margin-bottom: 2.4rem;
+        }
+
+    }
+
+    &__history {
+        width: 100%;
+        height: 74rem;
+        background-color: aqua;
+        margin-bottom: 10rem;
+
+        img {
+            height: auto;
+            margin-bottom: 1.6rem;
+        }
+
+        p {
+            @include mix.font(Body1);
+
+            span {
+                @include mix.font(H5);
+            }
+        }
+
+    }
+
+    &__title {
+        margin-bottom: 7rem;
+    }
+
+    &__content {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7rem;
+
+        img {
+            border-radius: 3rem;
+        }
+    }
+
+    &__text {
+        h3 {
+            @include mix.font(H3);
+            margin-bottom: 4rem;
+        }
+
+        ul>li {
+            @include mix.font(Body1);
+            line-height: 4.2rem;
+        }
+    }
+
+    &__optimiz {
+        width: 100%;
+        height: 74rem;
+        margin-bottom: 10rem;
+        background-color: beige;
+    }
+
+    &__card {
+        &-wrap {
+            width: 100%;
+            height: 33rem;
+            display: flex;
+            gap: 2rem;
+        }
+
+        border-radius: 3rem;
+        padding: 6rem 0;
+        flex: 1;
+        justify-content: space-between;
+        background-color: #F5F5F5;
+
+        h3 {
+            @include mix.font(H4);
+            margin-bottom: 1.4rem;
+        }
+
+        p {
+            @include mix.font(Body2);
+            text-align: center;
+        }
+    }
+
+    &__cardText {
+        text-align: center;
+    }
+
+}
+
+.company-part02 {
+    width: 100%;
+    height: 100rem;
+    background-image: url('../../asset/images/sub_company-part02-bg.jpg');
+
+    &__wrap {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__copyright {
+        width: 100%;
+        height: 100%;
+
+        h2 {
+            color: va.$white;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            color: va.$white;
+        }
+
+        p:first-of-type {
+            margin-bottom: 2.4rem;
+        }
+
+    }
+
+}
