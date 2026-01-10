@@ -236,6 +236,24 @@
     }
 }
 
+.subHeader-line {
+    width: 100%;
+    height: 12rem;
+    border-bottom: 1px solid #D7D7D7;
+
+    @media (max-width:1024px) {
+        height: 9rem;
+    }
+
+    @media (max-width:768px) {
+        height: 7rem;
+    }
+
+    @media (max-width:480px) {
+        height: 5rem;
+    }
+}
+
 // 메인타이틀
 .main__title {
     width: clamp(65%, 50vw, 100%);

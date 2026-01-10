@@ -128,8 +128,8 @@ $(function () {
       let sectionTop = $('.productList__sec').offset().top;
       let windowHeight = $(window).height();
 
-      // Calculate Y position to keep section at "top center" 
-      // This matches the visibility trigger's start position
+      // 섹션을 상단중앙에 위치하고록 Y좌표를 계산 
+      // 해당값은 visibility trigger의 시작점과 일치함.
       let targetY = sectionTop - (windowHeight / 2);
 
       // Calculate the desired progress for horizontal animation
