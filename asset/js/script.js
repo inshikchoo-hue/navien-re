@@ -378,3 +378,21 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Heart toggle functionality
+document.querySelectorAll('.prod__cardIcon-left a').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const img = this.querySelector('img');
+    const currentSrc = img.getAttribute('src');
+
+    if (currentSrc.includes('heart-none.png')) {
+      img.setAttribute('src', './asset/images/heart--on.png');
+      img.setAttribute('alt', '찜하기 완료');
+    } else {
+      img.setAttribute('src', './asset/images/heart-none.png');
+      img.setAttribute('alt', '찜하기');
+    }
+  });
+});
